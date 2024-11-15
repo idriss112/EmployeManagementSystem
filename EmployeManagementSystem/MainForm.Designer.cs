@@ -34,15 +34,20 @@ partial class MainForm
         this.X = new Label();
         this.panel2 = new Panel();
         this.label3 = new Label();
-        this.button4 = new Button();
-        this.button3 = new Button();
-        this.button2 = new Button();
-        this.button1 = new Button();
-        this.label2 = new Label();
+        this.btnLogout = new Button();
+        this.btnSalary = new Button();
+        this.btnAddEmployee = new Button();
+        this.btnDashboard = new Button();
+        this.greet_user = new Label();
         this.pictureBox1 = new PictureBox();
+        this.panel3 = new Panel();
+        this.dashboard1 = new Dashboard();
+        this.addEmployee1 = new AddEmployee();
+        this.salary1 = new Salary();
         this.panel1.SuspendLayout();
         this.panel2.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)this.pictureBox1).BeginInit();
+        this.panel3.SuspendLayout();
         this.SuspendLayout();
         // 
         // panel1
@@ -85,11 +90,11 @@ partial class MainForm
         // 
         this.panel2.BackColor = Color.FromArgb(33, 11, 97);
         this.panel2.Controls.Add(this.label3);
-        this.panel2.Controls.Add(this.button4);
-        this.panel2.Controls.Add(this.button3);
-        this.panel2.Controls.Add(this.button2);
-        this.panel2.Controls.Add(this.button1);
-        this.panel2.Controls.Add(this.label2);
+        this.panel2.Controls.Add(this.btnLogout);
+        this.panel2.Controls.Add(this.btnSalary);
+        this.panel2.Controls.Add(this.btnAddEmployee);
+        this.panel2.Controls.Add(this.btnDashboard);
+        this.panel2.Controls.Add(this.greet_user);
         this.panel2.Controls.Add(this.pictureBox1);
         this.panel2.Dock = DockStyle.Left;
         this.panel2.Location = new Point(0, 35);
@@ -108,89 +113,93 @@ partial class MainForm
         this.label3.TabIndex = 8;
         this.label3.Text = "Sign Out";
         // 
-        // button4
+        // btnLogout
         // 
-        this.button4.Cursor = Cursors.Hand;
-        this.button4.FlatAppearance.BorderSize = 0;
-        this.button4.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
-        this.button4.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
-        this.button4.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
-        this.button4.FlatStyle = FlatStyle.Flat;
-        this.button4.ForeColor = Color.White;
-        this.button4.Image = (Image)resources.GetObject("button4.Image");
-        this.button4.Location = new Point(14, 518);
-        this.button4.Name = "button4";
-        this.button4.Size = new Size(35, 35);
-        this.button4.TabIndex = 7;
-        this.button4.UseVisualStyleBackColor = true;
+        this.btnLogout.Cursor = Cursors.Hand;
+        this.btnLogout.FlatAppearance.BorderSize = 0;
+        this.btnLogout.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
+        this.btnLogout.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
+        this.btnLogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
+        this.btnLogout.FlatStyle = FlatStyle.Flat;
+        this.btnLogout.ForeColor = Color.White;
+        this.btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+        this.btnLogout.Location = new Point(14, 518);
+        this.btnLogout.Name = "btnLogout";
+        this.btnLogout.Size = new Size(35, 35);
+        this.btnLogout.TabIndex = 7;
+        this.btnLogout.UseVisualStyleBackColor = true;
+        this.btnLogout.Click += this.btnLogout_Click;
         // 
-        // button3
+        // btnSalary
         // 
-        this.button3.BackColor = Color.FromArgb(33, 11, 97);
-        this.button3.Cursor = Cursors.Hand;
-        this.button3.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
-        this.button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
-        this.button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
-        this.button3.FlatStyle = FlatStyle.Flat;
-        this.button3.Font = new Font("Arial Rounded MT Bold", 10.0173912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        this.button3.ForeColor = Color.WhiteSmoke;
-        this.button3.Image = (Image)resources.GetObject("button3.Image");
-        this.button3.ImageAlign = ContentAlignment.MiddleLeft;
-        this.button3.Location = new Point(16, 361);
-        this.button3.Name = "button3";
-        this.button3.Size = new Size(226, 40);
-        this.button3.TabIndex = 6;
-        this.button3.Text = "SALARY";
-        this.button3.UseVisualStyleBackColor = false;
+        this.btnSalary.BackColor = Color.FromArgb(33, 11, 97);
+        this.btnSalary.Cursor = Cursors.Hand;
+        this.btnSalary.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
+        this.btnSalary.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
+        this.btnSalary.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
+        this.btnSalary.FlatStyle = FlatStyle.Flat;
+        this.btnSalary.Font = new Font("Arial Rounded MT Bold", 10.0173912F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        this.btnSalary.ForeColor = Color.WhiteSmoke;
+        this.btnSalary.Image = (Image)resources.GetObject("btnSalary.Image");
+        this.btnSalary.ImageAlign = ContentAlignment.MiddleLeft;
+        this.btnSalary.Location = new Point(16, 361);
+        this.btnSalary.Name = "btnSalary";
+        this.btnSalary.Size = new Size(226, 40);
+        this.btnSalary.TabIndex = 6;
+        this.btnSalary.Text = "SALARY";
+        this.btnSalary.UseVisualStyleBackColor = false;
+        this.btnSalary.Click += this.btnSalary_Click;
         // 
-        // button2
+        // btnAddEmployee
         // 
-        this.button2.BackColor = Color.FromArgb(33, 11, 97);
-        this.button2.Cursor = Cursors.Hand;
-        this.button2.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
-        this.button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
-        this.button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
-        this.button2.FlatStyle = FlatStyle.Flat;
-        this.button2.Font = new Font("Arial Rounded MT Bold", 10.0173912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        this.button2.ForeColor = Color.WhiteSmoke;
-        this.button2.Image = (Image)resources.GetObject("button2.Image");
-        this.button2.ImageAlign = ContentAlignment.MiddleLeft;
-        this.button2.Location = new Point(14, 290);
-        this.button2.Name = "button2";
-        this.button2.Size = new Size(226, 40);
-        this.button2.TabIndex = 5;
-        this.button2.Text = "ADD EMPLOYEE";
-        this.button2.UseVisualStyleBackColor = false;
+        this.btnAddEmployee.BackColor = Color.FromArgb(33, 11, 97);
+        this.btnAddEmployee.Cursor = Cursors.Hand;
+        this.btnAddEmployee.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
+        this.btnAddEmployee.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
+        this.btnAddEmployee.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
+        this.btnAddEmployee.FlatStyle = FlatStyle.Flat;
+        this.btnAddEmployee.Font = new Font("Arial Rounded MT Bold", 10.0173912F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        this.btnAddEmployee.ForeColor = Color.WhiteSmoke;
+        this.btnAddEmployee.Image = (Image)resources.GetObject("btnAddEmployee.Image");
+        this.btnAddEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+        this.btnAddEmployee.Location = new Point(14, 290);
+        this.btnAddEmployee.Name = "btnAddEmployee";
+        this.btnAddEmployee.Size = new Size(226, 40);
+        this.btnAddEmployee.TabIndex = 5;
+        this.btnAddEmployee.Text = "ADD EMPLOYEE";
+        this.btnAddEmployee.UseVisualStyleBackColor = false;
+        this.btnAddEmployee.Click += this.btnAddEmployee_Click;
         // 
-        // button1
+        // btnDashboard
         // 
-        this.button1.BackColor = Color.FromArgb(33, 11, 97);
-        this.button1.Cursor = Cursors.Hand;
-        this.button1.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
-        this.button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
-        this.button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
-        this.button1.FlatStyle = FlatStyle.Flat;
-        this.button1.Font = new Font("Arial Rounded MT Bold", 10.0173912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        this.button1.ForeColor = Color.WhiteSmoke;
-        this.button1.Image = (Image)resources.GetObject("button1.Image");
-        this.button1.ImageAlign = ContentAlignment.MiddleLeft;
-        this.button1.Location = new Point(15, 221);
-        this.button1.Name = "button1";
-        this.button1.Size = new Size(226, 40);
-        this.button1.TabIndex = 4;
-        this.button1.Text = "DASHBOARD";
-        this.button1.UseVisualStyleBackColor = false;
+        this.btnDashboard.BackColor = Color.FromArgb(33, 11, 97);
+        this.btnDashboard.Cursor = Cursors.Hand;
+        this.btnDashboard.FlatAppearance.CheckedBackColor = Color.FromArgb(75, 8, 138);
+        this.btnDashboard.FlatAppearance.MouseDownBackColor = Color.FromArgb(75, 8, 138);
+        this.btnDashboard.FlatAppearance.MouseOverBackColor = Color.FromArgb(75, 8, 138);
+        this.btnDashboard.FlatStyle = FlatStyle.Flat;
+        this.btnDashboard.Font = new Font("Arial Rounded MT Bold", 10.0173912F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        this.btnDashboard.ForeColor = Color.WhiteSmoke;
+        this.btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
+        this.btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
+        this.btnDashboard.Location = new Point(15, 221);
+        this.btnDashboard.Name = "btnDashboard";
+        this.btnDashboard.Size = new Size(226, 40);
+        this.btnDashboard.TabIndex = 4;
+        this.btnDashboard.Text = "DASHBOARD";
+        this.btnDashboard.UseVisualStyleBackColor = false;
+        this.btnDashboard.Click += this.btnDashboard_Click;
         // 
-        // label2
+        // greet_user
         // 
-        this.label2.AutoSize = true;
-        this.label2.Font = new Font("Tahoma", 11.8956518F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        this.label2.ForeColor = Color.White;
-        this.label2.Location = new Point(51, 166);
-        this.label2.Name = "label2";
-        this.label2.Size = new Size(145, 23);
-        this.label2.TabIndex = 3;
-        this.label2.Text = "Welecome, User";
+        this.greet_user.AutoSize = true;
+        this.greet_user.Font = new Font("Tahoma", 11.8956518F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        this.greet_user.ForeColor = Color.White;
+        this.greet_user.Location = new Point(51, 166);
+        this.greet_user.Name = "greet_user";
+        this.greet_user.Size = new Size(145, 23);
+        this.greet_user.TabIndex = 3;
+        this.greet_user.Text = "Welecome, User";
         // 
         // pictureBox1
         // 
@@ -202,12 +211,46 @@ partial class MainForm
         this.pictureBox1.TabIndex = 2;
         this.pictureBox1.TabStop = false;
         // 
+        // panel3
+        // 
+        this.panel3.BackColor = SystemColors.ButtonFace;
+        this.panel3.Controls.Add(this.dashboard1);
+        this.panel3.Controls.Add(this.addEmployee1);
+        this.panel3.Controls.Add(this.salary1);
+        this.panel3.Dock = DockStyle.Fill;
+        this.panel3.Location = new Point(252, 35);
+        this.panel3.Name = "panel3";
+        this.panel3.Size = new Size(848, 565);
+        this.panel3.TabIndex = 2;
+        // 
+        // dashboard1
+        // 
+        this.dashboard1.Location = new Point(3, 0);
+        this.dashboard1.Name = "dashboard1";
+        this.dashboard1.Size = new Size(1016, 677);
+        this.dashboard1.TabIndex = 2;
+        // 
+        // addEmployee1
+        // 
+        this.addEmployee1.Location = new Point(-4, 3);
+        this.addEmployee1.Name = "addEmployee1";
+        this.addEmployee1.Size = new Size(1016, 677);
+        this.addEmployee1.TabIndex = 1;
+        // 
+        // salary1
+        // 
+        this.salary1.Location = new Point(0, -7);
+        this.salary1.Name = "salary1";
+        this.salary1.Size = new Size(1016, 677);
+        this.salary1.TabIndex = 0;
+        // 
         // MainForm
         // 
         this.AutoScaleDimensions = new SizeF(8F, 19F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = SystemColors.ButtonHighlight;
         this.ClientSize = new Size(1100, 600);
+        this.Controls.Add(this.panel3);
         this.Controls.Add(this.panel2);
         this.Controls.Add(this.panel1);
         this.FormBorderStyle = FormBorderStyle.None;
@@ -219,6 +262,7 @@ partial class MainForm
         this.panel2.ResumeLayout(false);
         this.panel2.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)this.pictureBox1).EndInit();
+        this.panel3.ResumeLayout(false);
         this.ResumeLayout(false);
     }
 
@@ -229,10 +273,14 @@ partial class MainForm
     private Label X;
     private Panel panel2;
     private PictureBox pictureBox1;
-    private Button button1;
-    private Label label2;
-    private Button button3;
-    private Button button2;
-    private Button button4;
+    private Button btnDashboard;
+    private Label greet_user;
+    private Button btnSalary;
+    private Button btnAddEmployee;
+    private Button btnLogout;
     private Label label3;
+    private Panel panel3;
+    private Salary salary1;
+    private Dashboard dashboard1;
+    private AddEmployee addEmployee1;
 }

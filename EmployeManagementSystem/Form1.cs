@@ -40,7 +40,7 @@ public partial class Form1 : Form
     }
 
 
-    //show and hide password
+    //show and hide password button
     private void cbShowPass_CheckedChanged(object sender, EventArgs e)
     {
         this.txtPassLogion.PasswordChar = this.cbShowPass.Checked ? '\0' : '*';
